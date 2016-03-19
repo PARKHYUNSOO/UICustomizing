@@ -1,0 +1,4 @@
+﻿import |WindowAlign|
+using namespace |WindowAlign|
+!a= object WindowAlign()
+!a.AlignHorizontal()

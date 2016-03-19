@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1603299B-0590-4305-A2EC-B255FFFCB63F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMD.AM.IntegratedMenu</RootNamespace>
+    <AssemblyName>IntegratedMenu</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aga.Controls, Version=1.7.0.0, Culture=neutral, PublicKeyToken=fcc90fbf924463a3, processorArchitecture=MSIL" />
+    <Reference Include="Aveva.ApplicationFramework">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.ApplicationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Database">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Shared">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Utilities">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="marAPI">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\marAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="PDMSFilters">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\PDMSFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="PMLNet">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\PMLNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Qios.DevSuite.Components, Version=4.0.0.20, Culture=neutral, PublicKeyToken=3cc53827b79c92fa, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IntegratedMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntegratedMenu.Designer.cs">
+      <DependentUpon>IntegratedMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="IntegratedMenu.ko-KR.resx">
+      <DependentUpon>IntegratedMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntegratedMenu.resx">
+      <DependentUpon>IntegratedMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="netcontroltest.pmlfrm" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $C:\AVEVA\Marine\OH12.1.SP4
+copy /y $(TargetFileName) C:\AVEVA\Marine\OH12.1.SP4</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,18 @@
+setup form !!netcontroltest dialog resiz
+	import |IntegratedMenu|
+	handle any
+	endhandle
+	using namespace |HMD.AM.IntegratedMenu|
+	
+	container .a1 nobox pmlnetcontrol |XXX| anchor all width 40 height 20
+	
+	member .control1 is IntegratedMenu
+
+exit
+
+define method .netcontroltest()
+	using namespace |HMD.AM.IntegratedMenu|
+	!this.control1 = object IntegratedMenu()
+	!this.a1.control = !this.control1.handle()
+endmethod  
+

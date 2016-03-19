@@ -1,0 +1,113 @@
+IMPORT |NetPhslib|
+USING NAMESPACE |HMD.AM.Utility|
+!TEST = OBJECT NetPhsLIB()
+
+
+
+!A= OBJECT ARRAY()
+!B= OBJECT ARRAY()
+!C= OBJECT ARRAY()
+!A.APPEND(1)
+!A.APPEND(7)
+!A.APPEND(5)
+!A.APPEND(4)
+
+!B.APPEND(4)
+!B.APPEND(2)
+!B.APPEND(67)
+!B.APPEND(21)
+
+!C.APPEND(745)
+!C.APPEND(75)
+!C.APPEND(5)
+!C.APPEND(7)
+
+!D= OBJECT ARRAY()
+!D.APPEND(!A)
+!D.APPEND(!C)
+!D.APPEND(!B)
+!TEST.GetArraySort(!D,4,TRUE)
+
+
+
+//데이터 가져오기
+IMPORT |NetPhslib|
+USING NAMESPACE |HMD.AM.Utility|
+!TEST = OBJECT NetPhsLIB()
+
+!XX= !TEST.GetDataFromOraCle(|select * from LIMS_CF_MAIN_AM where rownum<100|,|uid=tbdb01;pwd=tbdb01;dsn=mis-1|)
+
+
+//query 실행
+IMPORT |NetPhslib|
+USING NAMESPACE |HMD.AM.Utility|
+!TEST = OBJECT NetPhsLIB()
+
+!test.ExecuteSQL(|insert into lims_cf_main_back140813(comp_name) values('PAKDFJK')|,|uid=tbdb01;pwd=tbdb01;dsn=mis-1|)
+
+
+
+//subgrouping
+IMPORT |NetPhslib|
+USING NAMESPACE |HMD.AM.Utility|
+
+!list = object array()
+!row1= object array()
+!row2= object array()
+!row3= object array()
+!row4= object array()
+
+!row1.append(|park|)
+!row1.append(34)
+!row1.append(|DAEGU|)
+
+!row2.append(|JO|)
+!row2.append(30)
+!row2.append(|SUNGNAM|)
+
+!row3.append(|KIM|)
+!row3.append(77)
+!row3.append(|aUWANG|)
+
+!row4.append(|KIM|)
+!row4.append(50)
+!row4.append(|busan|)
+
+!LIST.APPEND(!ROW1)
+!LIST.APPEND(!ROW2)
+!LIST.APPEND(!ROW3)
+!LIST.APPEND(!ROW4)
+
+!TEST = OBJECT NetPhsLIB()
+-- args 1: 서브그루핑할 array
+--      2: 서브그룹할 Key
+--      3: 정렬Key
+--      4: 정렬방식 True: 오름차순, False:내림차순
+!RESULT = !TEST.SubGroupingbyColumn(!LIST,0)
+
+
+
+
+import |netphslib|
+USING NAMESPACE |HMD.AM.Utility|
+!TEST = OBJECT NetPhsLIB()
+!D= !test.GetTreatInfos(|E31P|,|BG|,125,|GAL|,|STEEL|)
+------------------전달된 스풀에서 사용된 tube의 bore리스트------------
+!d=!test.GetPipeSpoolBores('T1D11B82M-TL107-001')
+
+
+------------------가장 긴 튜브의 bore를 가져오는 부분-------------------
+!c=!test.GetPipeSpoolLongestBore('T1D11B82M-TL107-001')
+
+
+-----------------spool이름에 해당하는 pdst의 row가져오는 부분------------
+!b=!test.getpdstrowfrompipename('TB11CB-PD101-001','2435')
+q var !B
+
+
+------페인트코드 결정하기------------------
+import |netphslib|
+USING NAMESPACE |HMD.AM.Utility|
+!TEST = OBJECT NetPhsLIB()
+!B= !TEST.GetPaintCode(|243506|, |PIPE|,|TA30_DB|,|IG|,|931|,|STEEL|)
+Q VAR !B

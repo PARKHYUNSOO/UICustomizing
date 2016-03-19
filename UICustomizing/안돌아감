@@ -1,0 +1,199 @@
+ISODRAFTMODE
+
+OPTIONS DEFAULT
+
+MM Bore
+MM Distance
+Precision Bores NOMINAL
+CuttingList  OFF
+Cutmarks  OFF
+Charheight 1.70mm
+HYPERPLANT  OFF
+Date UK
+Dimdistance String 2mm
+Dimdistance Overall 6mm
+Dimdistance Supports 4mm
+Dimensions Overall   CENTRELINE  ONLY  STOPPING Branch Connections
+
+
+Dimlabels IN
+Supports  STRING
+Margin  LEFT 5mm
+Margin  RIGHT 5mm
+Margin  TOP 5mm
+Margin  BOTTOM 5mm
+Size  A3
+FlowArrows ON
+FlowArrows Inline Scale 8
+Frame ON
+Reserve 0mm
+Reserve MaterialList 0mm
+FallingLines DEGREES 5 AccuracyLevel 0
+AngleAccuracy  0
+LooseFlangeAllowance 150mm
+Isotype  ERECTION
+File PDF  "C:/ISOOUT/plot"  MULTIPLE 840
+File SET PDF View Comp Colourplus Bindpages
+
+TTFont OFF
+TTFont 8
+Units  METRIC
+Mark Detail  OFF
+Mark Revision  OFF
+Mark Ignore  ON
+PlottingScale  100
+PictureScale  100
+Stacking  1  ALONG
+Split  100  PERCENT
+SpoolNumbers  OFF
+ISO  3 
+Wastage AREA 1 1
+Wastage AREA 2 1
+Wastage AREA 3 1
+Wastage AREA 4 1
+Wastage AREA 5 1
+Wastage AREA 6 1
+Wastage AREA 7 1
+Wastage AREA 8 1
+Wastage AREA 9 1
+
+MessageFile  /C:\ISOOUT\LOG
+TransferFile  OFF
+CllengthFile  OFF
+CutpipelistFile  OFF
+SupportFile  OFF
+MatlistFile  OFF
+MatControl  OFF
+MATE GRIDlines ON
+MATEriallist LINE
+MaterialList  OFF
+MaterialList  DRWG
+MaterialList  RIGHT  DESCRIPTION
+MaterialList Charheight 1.5mm  Lspacing  100
+MaterialList  Code  8 DUMMY SUFFIX  SINGLE
+
+MaterialList TableDefinition  Column 1 PARTNUMBER with Width 3
+	Column 2 DESCRIPTION with Width 40
+	Column 3 BORE with Width 6
+	Column 4 ITEMCODE with Width 10
+	Column 5 QUANTITY in Millimetres with Width 6
+  Column 6 OTHER |중량|	WEIGHT	WITH	 Width 7 Total Fabrication Total Erection	Total	Combined Factor	1	TubeFactor 1
+--  Column 7 OTHER Heading 'SPOOLNAME' PCRFA  with Width 10
+--  Column 8 REMARKS and ANGL  on ELBO with Width 12
+
+CompipeFile  OFF
+Compipe MTO DRWG
+Compipe Itemcodes USER
+Compipe Descriptions SHORT
+Compipe Supports ON
+
+-- Nominal Diameter Text
+Atext 201 'X'
+Atext 204 'Y'
+Atext 205 'Z '
+Atext 207 'A'
+Atext 210 ''
+Atext 211 ''
+Atext 212 ''
+Atext 289 ''
+--INSULATION
+Atext 290 ''
+Atext 300 '제작재 리스트'
+Atext 301 '순번'
+Atext 303 'DESCRIPTION'
+Atext 304 'BORE'
+Atext 305 'ITEM CODE'
+Atext 306 'QTY'
+Atext 310 '설치재 리스트'
+Atext 315 'OTHERS'
+
+Atext 324 'REMARKS'
+--Atext 338 'R'
+
+
+BENDRADIUS OFF
+
+Tagging ON
+Instname  NAME
+
+Delimiter  COLON
+InsulationControl  OFF
+TracingControl  ALL
+Attaname  OFF
+Tolerance  Offset 1mm
+Tolerance  Angle  0.06
+Specbreak  COMPONENT  SpecChanges OFF
+Axes  WORL /*
+ContinuationSymbols NOZZLE
+Itemcode Valves DEFAULT
+Itemcode Instruments DEFAULT
+Itemcode Pcoms DEFAULT
+Itemcode Traps DEFAULT
+Itemcode Vents DEFAULT
+Itemcode Filters DEFAULT
+Itemcode  TOTAL
+Itemcode  from SPREF
+Itemcode for Supports from SPREF
+Bolting  length description ON
+Bolting  length itemcode APPEND
+Bolting  Units  METRIC
+
+--위치 좌표 나타나는 부분
+Coords  ON AT Pipe
+Coords  ON AT Nozz
+Coords  ON AT Open
+Coords  ON AT Clos
+Coords  ON AT Vent
+Coords  ON AT Dran
+Coords  ON AT Shee
+--Coords  ON AT Misc
+
+ELEVation SUPPressed
+--Elevation    INTERSECTION
+Skewbox  TRIANGLE Standout 10mm Hatch 2mm Partial  OFF Tags OFF
+Zerolengthskews ON
+Fallskews THREEDBOX  ON
+
+--TextPosition DetailPlots Corner TL  X 70 Y 70 CharHeight 2.1mm Direction  RIGHT Stack 20 Direction  UP  Scale 100
+--TextPosition PROJ X 200mm Y 200mm CharHeight 10.4mm
+--TextPosition DATE X 60mm Y 60mm CharHeight 5.4mm
+--TextPosition NORTHA X 50mm Y 50mm CharHeight 2.1mm
+--TextPosition NAME X 40mm Y 40mm CharHeight 1.4mm
+--Bendradius DISTANCE
+Itemcode  Length SHORT
+Tapping Scale  100
+Tapping Dimensions ON
+Tapping Coordinates OFF
+Truncate OFF
+--Weldangles ON Weldangmin 0.1
+EquipmentNumbering NOZZLE
+COFORMAT SHIP
+
+ADD  /Copy-of-T1D18B82M-TL100
+ADD  /Copy-of-T1D18B82M-TL101
+ ADD /Copy-of-T1D18B82B-TL101
+ ADD /Copy-of-T1D16B82M-TL100
+ ADD  /Copy-of-T1D16B82M-TL102
+ ADD  /Copy-of-T1D16B82B-TL102
+ ADD  /Copy-of-T1D14B82M-TL100
+ ADD  /Copy-of-T1D14B82M-TL104
+ ADD  /Copy-of-T1D14B82M-TL103
+ ADD /Copy-of-T1D14B82B-TL104
+ ADD /Copy-of-T1D14B82B-TL103
+ ADD  /Copy-(2)-of-T1D13B82M-TL100
+ ADD /Copy-of-T1D13B82M-TL105
+ ADD  /Copy-of-T1D13B82B-TL111
+ ADD  /Copy-of-T1D13B82B-TL110
+ ADD /Copy-of-T1D13B82B-TL100
+ ADD /Copy-of-T1D13B82B-TL105
+ ADD  /Copy-(4)-of-T1D11B82M-TL100
+ 
+ 
+-- ADD  /Copy-of-T1D11B82M-TL107
+ --ADD  /Copy-of-T1D11B82B-TL109
+ --ADD  /Copy-of-T1D11B82B-TL107
+ --ADD  /Copy-of-T1D11B82B-TL106
+ 
+DETAIL   all as |PIPE-SYSTEM-01| 
+EXIT
+$.

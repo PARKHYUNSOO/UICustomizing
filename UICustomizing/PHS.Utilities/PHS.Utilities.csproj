@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C70E60A-819A-48E9-8BE4-4904F8823C6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PHS.Utilities</RootNamespace>
+    <AssemblyName>PHS.Utilities</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aveva.ApplicationFramework">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.ApplicationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.ApplicationFramework.Presentation">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.ApplicationFramework.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Clasher, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Clasher.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Clasher.Implementation, Version=12.1.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Clasher.Implementation.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Database, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Explorer, Version=12.1.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Explorer.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Geometry, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Graphics, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Piping, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Piping.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Shared, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Utilities">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Viewer3D.Addin">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Viewer3D.Addin.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v12.2, Version=12.2.18.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress\DXperience 12.2\Bin\Framework\DevExpress.BonusSkins.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress\DXperience 12.2\Bin\Framework\DevExpress.Data.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.Utils.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress\DXperience 12.2\Bin\Framework\DevExpress.XtraBars.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.XtraEditors.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ExplorerAddin, Version=12.1.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\ExplorerAddin.dll</HintPath>
+    </Reference>
+    <Reference Include="ExplorerControl, Version=12.1.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\ExplorerControl.dll</HintPath>
+    </Reference>
+    <Reference Include="GridControl, Version=12.1.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\GridControl.dll</HintPath>
+    </Reference>
+    <Reference Include="infragistics.Shared, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\infragistics.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="infragistics.Win, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\infragistics.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="infragistics.Win.UltraWinTree, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\infragistics.Win.UltraWinTree.dll</HintPath>
+    </Reference>
+    <Reference Include="marAPI, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\marAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="MarUserInterface, Version=12.1.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\MarUserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="PDMSCommands">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\PDMSCommands.dll</HintPath>
+    </Reference>
+    <Reference Include="PDMSFilters, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\PDMSFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="PipeFabricationAddin, Version=12.1.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\PipeFabricationAddin.dll</HintPath>
+    </Reference>
+    <Reference Include="PositionControl, Version=12.1.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\PositionControl.dll</HintPath>
+    </Reference>
+    <Reference Include="SourceGrid, Version=4.40.5700.34827, Culture=neutral, PublicKeyToken=df6f5e538749e85d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SourceGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configure_Menu.cs" />
+    <Compile Include="Create4View.cs" />
+    <Compile Include="RadialMenuControl\DummyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadialMenuControl\DummyForm.Designer.cs">
+      <DependentUpon>DummyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadialMenuControl\RadialMenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RadialMenuControl\SetupMenuList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadialMenuControl\SetupMenuList.Designer.cs">
+      <DependentUpon>SetupMenuList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelfExpungeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelfExpungeForm.Designer.cs">
+      <DependentUpon>SelfExpungeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DbSaveWork.cs" />
+    <Compile Include="Utility\ElementRenameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\ElementRenameForm.Designer.cs">
+      <DependentUpon>ElementRenameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\PHS_lib.cs" />
+    <Compile Include="ModelInsertPGM\ModelInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelInsertPGM\ModelInsert.Designer.cs">
+      <DependentUpon>ModelInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelInsertPGM\ModelInsertVerify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelInsertPGM\ModelInsertVerify.Designer.cs">
+      <DependentUpon>ModelInsertVerify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectChange.Designer.cs">
+      <DependentUpon>ProjectChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecGen_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpecGen_Form.Designer.cs">
+      <DependentUpon>SpecGen_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartForm.cs" />
+    <Compile Include="Specgenerator.cs" />
+    <Compile Include="Utility\ListViewItemComparer.cs" />
+    <Compile Include="Utility\GeneralWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\GeneralWaitForm.Designer.cs">
+      <DependentUpon>GeneralWaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Win32Hook.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="RadialMenuControl\DummyForm.resx">
+      <DependentUpon>DummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadialMenuControl\SetupMenuList.resx">
+      <DependentUpon>SetupMenuList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelfExpungeForm.resx">
+      <DependentUpon>SelfExpungeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\ElementRenameForm.resx">
+      <DependentUpon>ElementRenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelInsertPGM\ModelInsert.resx">
+      <DependentUpon>ModelInsert.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelInsertPGM\ModelInsertVerify.resx">
+      <DependentUpon>ModelInsertVerify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectChange.resx">
+      <DependentUpon>ProjectChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecGen_Form.resx">
+      <DependentUpon>SpecGen_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\GeneralWaitForm.resx">
+      <DependentUpon>GeneralWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keydescrip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1455538494_BeOS_Workspace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1455538577_grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bossmodel.Jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $C:\AVEVA\Marine\OH12.1.SP4
+copy /y $(TargetFileName) C:\AVEVA\Marine\OH12.1.SP4</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

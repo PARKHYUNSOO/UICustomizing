@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E86116B2-6C6B-4DD1-9BC0-850E09B573E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PHS.CustomizingExplorer</RootNamespace>
+    <AssemblyName>PHS.CustomizingExplorer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aveva.ApplicationFramework, Version=1.1.20.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.ApplicationFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aveva.ApplicationFramework.Presentation">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.ApplicationFramework.Presentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Database">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Database.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Explorer">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Explorer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Graphics">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Graphics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Shared, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Shared.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Utilities">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Utilities.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExplorerControl">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\ExplorerControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="infragistics.Shared">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\infragistics.Shared.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="infragistics.Win">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\infragistics.Win.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="infragistics.Win.UltraWinTree">
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\infragistics.Win.UltraWinTree.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PMLNet, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\AVEVA\Marine\OH12.1.SP2\PMLNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddminMDB.cs" />
+    <Compile Include="CustomExplorer.cs" />
+    <Compile Include="CustomExplorerAddin.cs" />
+    <Compile Include="ExplorerContextMenus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\PHS.ExplorerCommands\PHS.ExplorerCommands.csproj">
+      <Project>{1b260990-4f34-47e3-8df9-e6468f31a0f9}</Project>
+      <Name>PHS.ExplorerCommands</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Readonly.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $C:\AVEVA\Marine\OH12.1.SP4
+copy /y $(TargetFileName) C:\AVEVA\Marine\OH12.1.SP4</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3869A3EA-5459-4BBF-B6C2-B83F1A1B9055}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMD.AM.Utility</RootNamespace>
+    <AssemblyName>NetPhslib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aveva.ApplicationFramework, Version=1.1.20.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.ApplicationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Database">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Geometry, Version=12.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Shared">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Pdms.Utilities">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\Aveva.Pdms.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="marAPI">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\marAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="PDMSFilters">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\PDMSFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="PMLNet">
+      <HintPath>..\..\..\..\..\..\..\AVEVA\Marine\OH12.1.SP4\PMLNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NetPhslib.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PML실행.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $C:\AVEVA\Marine\OH12.1.SP4
+copy /y $(TargetFileName) C:\AVEVA\Marine\OH12.1.SP4</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
